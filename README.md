@@ -64,3 +64,14 @@ Or run the main class `MySpringBootAa23vVotingAppFinalApplication` from your IDE
 **Kondeti Pavan Kumar**
 
 
+![Screenshot 1](a1.png)
+![Screenshot 2](a2.png)
+![Screenshot 3](a3.png)
+![Screenshot 4](a4.png)
+![Screenshot 5](a5.png)
+![Screenshot 6](a6.png)
+![Screenshot 7](a7.png)
+![Screenshot 8](a8.png)
+![Screenshot 9](a9.png)
+![Screenshot 19](a10.png)
+
