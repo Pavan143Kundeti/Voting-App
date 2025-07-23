@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{admin/base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section class = "center">
+	
+
+<h1>Admin Dashboard</h1>
+		<div th:if=${session.msg}>
+			<h3 th:text="${session.msg}" style="color:red"></h3>
+   					<h3 th:text="${session.msg}" style="color:red"></h3>
+   		
+   		</div>
+   		
+   		
+		<h3>Candidate 1 : Total Votes = <b style="color: limegreen"><span th:text="${c1}"></span></b></h3>
+		<h3>Candidate 2 : Total Votes = <b style="color: limegreen"><span th:text="${c2}"></span></b></h3>
+		<h3>Candidate 3 : Total Votes = <b style="color: limegreen"><span th:text="${c3}"></span></b></h3>
+		<h3>Candidate 4 : Total Votes = <b style="color: limegreen"><span th:text="${c4}"></span></b></h3>
+
+<!-- Chart.js Bar Chart for Voting Results -->
+<canvas id="votesChart" width="400" height="200"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script th:inline="javascript">
+    var c1 = [[${c1}]];
+    var c2 = [[${c2}]];
+    var c3 = [[${c3}]];
+    var c4 = [[${c4}]];
+    var ctx = document.getElementById('votesChart').getContext('2d');
+    var votesChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Candidate 1', 'Candidate 2', 'Candidate 3', 'Candidate 4'],
+            datasets: [{
+                label: 'Votes',
+                data: [c1, c2, c3, c4],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 99, 132, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    precision: 0
+                }
+            }
+        }
+    });
+</script>
+   		
+   		
+
+	<br>	
+	</section>
+</body>
+</html>
